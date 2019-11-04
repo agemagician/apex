@@ -36,7 +36,7 @@ if TORCH_MAJOR == 0 and TORCH_MINOR < 4:
 cmdclass = {}
 ext_modules = []
 
-if #"--pyprof" in sys.argv:
+#if "--pyprof" in sys.argv:
 with open('requirements.txt') as f:
     required_packages = f.read().splitlines()
     #pipmain(["install"] + required_packages)
