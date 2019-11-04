@@ -56,7 +56,7 @@ cmdclass['build_ext'] = BuildExtension
 
 #if "--cpp_ext" in sys.argv:
 from torch.utils.cpp_extension import CppExtension
-sys.argv.remove("--cpp_ext")
+#sys.argv.remove("--cpp_ext")
 ext_modules.append(
     CppExtension('apex_C',
                  ['csrc/flatten_unflatten.cpp',]))
