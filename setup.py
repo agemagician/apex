@@ -2,7 +2,12 @@ import torch
 from setuptools import setup, find_packages
 import subprocess
 
-from pip._internal import main as pipmain
+#from pip._internal import main as pipmain
+try:
+    from pip import main as pipmain
+except ImportError:
+    from pip._internal import main as pipmain
+    
 import sys
 import warnings
 import os
