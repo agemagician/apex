@@ -48,7 +48,9 @@ if "--cpp_ext" in sys.argv or "--cuda_ext" in sys.argv:
                            "found torch.__version__ = {}".format(torch.__version__))
     from torch.utils.cpp_extension import BuildExtension
     cmdclass['build_ext'] = BuildExtension
-
+else:
+    warnings.warn("Option --cpp_ext or cuda_ext not specified. Not installing cuda extension dependencies!")
+    
 if "--cpp_ext" in sys.argv:
     from torch.utils.cpp_extension import CppExtension
     sys.argv.remove("--cpp_ext")
